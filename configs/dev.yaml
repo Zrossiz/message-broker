@@ -1,0 +1,6 @@
+app:
+  logger_level: DEBUG
+  address: localhost
+  port: 8080
+repo:
+  filepath: /Users/zrossiz/Desktop/self-realization/message-broker/broker/data.txt
