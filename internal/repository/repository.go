@@ -1,11 +1,11 @@
 package repository
 
 type Repository struct {
-	Message MessageRepo
+	Message *MessageRepo
 }
 
-func New(filepath string) *Repository {
+func New(connectionPool *ConnectionPool) (*Repository, error) {
 	return &Repository{
-		Message: *NewMessage(filepath),
-	}
+		Message: NewMessage(connectionPool.File),
+	}, nil
 }

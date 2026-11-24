@@ -2,15 +2,23 @@ package main
 
 import (
 	"log"
-	"os"
 
 	"github.com/Zrossiz/message-broker/internal/app"
 )
 
 func main() {
-	err := app.New()
+	app, err := app.New()
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(1)
+	}
+
+	err = app.Start()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = app.Stop()
+	if err != nil {
+		log.Fatal(err)
 	}
 }
